@@ -1,0 +1,215 @@
+Первое ДЗ 
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я: 
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25
+$ pwd
+/d/Group_25
+
+2) Создать папку:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25
+$ mkdir GitBush
+
+3) Зайти в папку:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25
+$ cd GitBush
+
+4) Создать 3 папки:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush
+$ mkdir Papka_1 Papka_2 Papka_3
+
+5) Зайти в любоую папку:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush
+$ cd Papka_2
+
+6) Создать 5 файлов (3 txt, 2 json):
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2
+$ touch file_1.txt file_2.txt file_3.txt file_4.json file_5.json
+
+7) Создать 3 папки:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2
+$ mkdir Papka_4 Papka_5 Papka_6
+
+8. Вывести список содержимого папки:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2
+$ ls -la
+total 4
+drwxr-xr-x 1 Tsvetelina 197121 0 ноя 30 17:03 ./
+drwxr-xr-x 1 Tsvetelina 197121 0 ноя 30 16:59 ../
+-rw-r--r-- 1 Tsvetelina 197121 0 ноя 30 17:02 file_1.txt
+-rw-r--r-- 1 Tsvetelina 197121 0 ноя 30 17:02 file_2.txt
+-rw-r--r-- 1 Tsvetelina 197121 0 ноя 30 17:02 file_3.txt
+-rw-r--r-- 1 Tsvetelina 197121 0 ноя 30 17:02 file_4.json
+-rw-r--r-- 1 Tsvetelina 197121 0 ноя 30 17:02 file_5.json
+drwxr-xr-x 1 Tsvetelina 197121 0 ноя 30 17:03 Papka_4/
+drwxr-xr-x 1 Tsvetelina 197121 0 ноя 30 17:03 Papka_5/
+drwxr-xr-x 1 Tsvetelina 197121 0 ноя 30 17:03 Papka_6/
+
+9) + Открыть любой txt файл:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2
+$ vim file_3.txt
+
+10) + написать туда что-нибудь, любой текст:
+https://prnt.sc/21lvdns
+
+11) + сохранить и выйти:
+Esc + :wq + Enter
+
+12) Выйти из папки на уровень выше:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2
+$ cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2
+$ mv file_1.txt file_2.txt /d/Group_25/GitBush/Papka_2/Papka_4
+https://prnt.sc/21lw0cn
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2
+$ cp file_4.json file_5.json /d/Group_25/GitBush/Papka_1
+https://prnt.sc/21lwl2x
+https://prnt.sc/21lwr61
+
+15) Найти файл по имени:
+
+Поиск по файлам и папкам находящимся в папке, в которой находимся ниже по дериктории:
+а).
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2
+$ find ./ -type f -name "file_1.txt"
+./Papka_4/file_1.txt
+b).
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush
+$ find ./ -type f -name "*file_5*.json"
+./Papka_1/file_5.json
+./Papka_2/file_5.json
+
+Поиск в папке выше по размещению в директории:
+c).
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2
+$  find /d/Group_25/GitBush/Papka_1/ -name file_5.json
+/d/Group_25/GitBush/Papka_1/file_5.json
+
+https://prnt.sc/21m2k6p
+d).
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2/Papka_4
+$ find ../../ -type f -name "*file_5*.json"
+../../Papka_1/file_5.json
+../../Papka_2/file_5.json
+
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает:
+a).
+Tsvetelina@WIN-1VK0R57PCM6 MINGW32 /d/Group_25/GitBush/Papka_2/Papka_4
+$ tail -f file_1.txt
+Привет!
+
+Hello world!
+
+Лучшие курсы на планете Земля :)
+https://screenrec.com/share/nOwR2Q6bGK
+
+b). Команда выводит по умолчанию 10 последних строк:
+$ tail -f file_3.txt
+242. Харизма лидера. Радислав Гандапас
+243. Быть счастливее. Тал Бен-Шахар
+244. Визуальное мышление. Дэн Роэм
+245. Рисовый штурм и еще 21 способ мыслить нестандартно. Майкл Михалко
+246. Обои-убийцы, ядовитая вода и стул-обольститель. Дарья Саркисян
+247. Как выступать публично. 50 вопросов и ответов. Никита Непряхин
+248. Сила воли. Руководство по управлению собой
+249. Привычки бедных: вы не станете богатым, если…
+250. Магнит счастья
+251. История Amazon. Джефф Безоc
+
+Tsvetelina@WIN-1VK0R57PCM6 MINGW64 /d/Group_25/GitBush/Papka_2
+$ tail -f file_3.txt | grep "публично"
+247. Как выступать публично. 50 вопросов и ответов. Никита Непряхин
+
+Возвращает сведения о количестве совпадений с искомым шаблоном, найденных в файле:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW64 /d/Group_25/GitBush/Papka_2
+$ cat file_3.txt | grep -c "Изучаем"
+6
+
+17) вывести несколько первых строк из текстового файла:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW64 /d/Group_25/GitBush/Papka_2
+$ head -n5 file_3.txt
+1. Lee Copeland. A Practitioner's Guide to Software Test Design
+2. Ron Patton. Software Testing
+3. Роман Савин. Тестирование dot com
+4. Exploratory software testing. James Whittaker
+5. Рекс Блэк. Ключевые процессы тестирования
+
+18) вывести несколько последних строк из текстового файла:               
+Tsvetelina@WIN-1VK0R57PCM6 MINGW64 /d/Group_25/GitBush/Papka_2
+$ tail -n 7 file_3.txt
+245. Рисовый штурм и еще 21 способ мыслить нестандартно. Майкл Михалко
+246. Обои-убийцы, ядовитая вода и стул-обольститель. Дарья Саркисян
+247. Как выступать публично. 50 вопросов и ответов. Никита Непряхин
+248. Сила воли. Руководство по управлению собой
+249. Привычки бедных: вы не станете богатым, если…
+250. Магнит счастья
+251. История Amazon. Джефф Безоc
+
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW64 /d/Group_25/GitBush/Papka_2
+$ less /d/Group_25/GitBush/Papka_2/file_3.txt 
+
+Поиск слова "Изучаем" в файле:
+/Изучаем (вниз по тексту) https://prnt.sc/21pwco8
+?Изучаем (вверх по тексту) https://prnt.sc/21pxkt1
+Кнопка стрелка вверх - перемещение построчно вверх по тексту;
+Кнопка стрелка вниз - перемещение построчно вниз по тексту;
+Кнопка влево - перемещение влево по тексту;
+Кнопка вправо - перемещение вправо по тексту;
+PgUp - прокрутка текста вперед на страницу;
+PgDown - прокрутка текста назад на страницу;
+Shift+< - прокрутка в начало файла;
+SHift+> - прокрутка в конец файла;
+d - переместиться на полстраницы вниз
+b - переместиться на полстраницы вверх
+h - вызов справки;
+q -выход из less.
+
+20) вывести дату и время:
+Tsvetelina@WIN-1VK0R57PCM6 MINGW64 /d/Group_25/GitBush/Papka_2
+$ date
+Sat Dec  4 17:58:19 RTZ 2021
+
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+
+Tsvetelina@WIN-1VK0R57PCM6 MINGW64 /d/Group_25/GitBush/Papka_2
+$ curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   185  100   185    0     0   1646      0 --:--:-- --:--:-- --:--:--  1666{"age":"32","family":{"children":[["Alex",24],["Kate",12]],"pets":{"cat":{"age":3,"name":"Sunny"},"dog":{"age":4,"name":"Luky"}},"u_salary_1_5_year":4000},"name":"Vadim","salary":1000}
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+#!/bin/bash
+cd Papka_3
+mkdir Test_1 Test_2 Test_3
+cd Test_2
+touch f_1.txt f_2.txt f_3.txt f_4.json f_5.json
+mkdir Test_4 Test_5 Test_6
+ls -la
+mv f_4.json f_5.json /d/Group_25/GitBush/Papka_3/Test_2/Test_5
+done
+https://screenrec.com/share/xp1XlBFIEW
+ 
+
+=====================
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir foldername
+3) Зайти в папку - cd foldername
+
+https://losst.ru/nachnite-izuchat-linux-pryamo-sejchas
+
+Losst (https://losst.ru/nachnite-izuchat-linux-pryamo-sejchas)
+Начните изучать Linux прямо сейчас! - Losst
+На этой странице собраны все самые полезные и интересные для новичков и возможно некоторых опытных пользователей в Linux руководства и статьи. В самом
